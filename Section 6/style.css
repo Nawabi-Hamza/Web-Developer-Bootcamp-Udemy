@@ -1,0 +1,22 @@
+#external {
+  color: rgb(9, 11, 7);
+  font-size: 1.5em;
+  text-decoration: orange line-through wavy;
+}
+
+p {
+  text-align: justify;
+  background: rgba(255, 166, 0, 0.593);
+  color: rgb(0, 0, 0);
+  line-height: 2;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  font-family: math, sans-serif;
+  
+}
+
+button {
+  color: #333;
+}

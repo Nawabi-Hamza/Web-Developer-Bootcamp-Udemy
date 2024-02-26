@@ -1,0 +1,81 @@
+* {
+  background-color: rgba(128, 255, 0, 0.347);
+}
+
+h1 {
+  color: black;
+}
+
+#head2 {
+  background-color: aliceblue;
+  color: black;
+}
+
+.head3 {
+  background-color: burlywood;
+  color: brown;
+}
+
+/* Border Properties */
+p {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+}
+
+.first {
+  background-color: brown;
+  color: white;
+  border-style: solid;
+  border-width: 10px;
+  border-color: black;
+}
+.second {
+  background-color: aqua;
+  color: black;
+  border-style: dotted solid dashed double;
+  border-width: 10px 15px 20px 25px;
+  border-color: black red yellow blue;
+}
+
+.third {
+  background-color: rgb(255, 255, 0);
+  color: black;
+  border: 5px solid black;
+  border-left-width: 30px;
+  border-right-color: rgb(242, 0, 255);
+}
+
+/* Border Radius */
+.fourth {
+  background-color: rgb(255, 157, 0);
+  color: black;
+  border: 10px double black;
+  border-radius: 10px;
+}
+.fifth {
+  background-color: rgb(242, 0, 255);
+  color: black;
+  border: 15px solid red;
+  border-radius: 50%;
+}
+.sixth {
+  background-color: rgb(0, 183, 255);
+  color: black;
+  border: 10px solid black;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.seventh {
+  background-color: rgb(255, 119, 0);
+  color: black;
+  border: 10px solid red;
+  border-radius: 25% 5%;
+}
+.eight {
+  background-color: rgb(97, 153, 126);
+  color: black;
+  border: 10px solid red;
+  border-radius: 70% 20% / 10% 40%;
+}
