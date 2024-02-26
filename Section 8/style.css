@@ -2,3 +2,21 @@ body {
   background-color: rgba(0, 255, 242, 0.347);
 }
 
+h1 {
+  font-size: 3em;
+}
+p {
+  font-size: 1.5em;
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+  margin: 2em;
+}
+
+.head1 {
+  background-color: rgb(217, 255, 0);
+}
+
+.par1 {
+  background-color: brown;
+}
