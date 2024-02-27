@@ -1,0 +1,65 @@
+body {
+  background-color: cadetblue;
+}
+.index section {
+  height: 500px;
+  width: 500px;
+  background-color: burlywood;
+}
+.index #rgba {
+  height: 50%;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.index #opacity {
+  height: 50%;
+  width: 50%;
+  background-color: yellow;
+  opacity: 0.3;
+}
+
+
+/* Position page style design */
+.position .fixed {
+  background-color: aquamarine;
+  padding: 1rem;
+  position: fixed;
+  top: 10rem;
+  left: 0;
+}
+.position .sticky {
+  background-color: rgb(255, 249, 127);
+  padding: 1rem;
+  position: sticky;
+  top: 0px;
+  z-index: 9;
+}
+.position.relative {
+  background-color: rgb(133, 255, 127);
+  padding: 1rem;
+  position: relative;
+  height:150px;
+}
+.position .absolute {
+  background-color: rgb(255, 127, 193);
+  padding: 1rem;
+  position: absolute;
+  height: 100px;
+  width: 300px;
+  right:0;
+  top:0px;
+}
+.position p {
+  font-size: 3em;
+}
+
+
+/* Extra page style  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.extra{
+  color:#333;
+  font-family: Roboto, sans-serif;
+  font-size: 2em;
+}
