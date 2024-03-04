@@ -1,0 +1,230 @@
+/* Reset CSS Style */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* The above style for reset css */
+
+:root {
+  --main-color: #4fd496;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background: var(--main-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panel {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 15px 25px;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pricing-plan {
+  border-bottom: 1px solid #4fd496bd;
+}
+.pricing-plan:last-child {
+  border-bottom: none;
+}
+.pricing-img {
+  margin-bottom: 25px;
+  max-width: 100%;
+}
+.pricing-header {
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.pricing-features {
+  margin: 50px 0 25px;
+  color: #4fd496;
+}
+.pricing-features-item {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 25px 0px;
+  border-top: 1px solid var(--main-color);
+}
+.pricing-features-item:last-child {
+  border-bottom: 1px solid var(--main-color);
+}
+.pricing-price {
+  color: var(--main-color);
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+}
+.pricing-button {
+  border: 1px solid #4fd496;
+  border-radius: 0.5rem;
+  color: #4fd496;
+  display: inline-flex;
+  padding: 15px 35px;
+  text-decoration: none;
+  margin: 25px 0;
+  transition: all 200ms ease-in-out;
+}
+.pricing-button:hover,
+.pricing-button:focus {
+  background-color: #e7ffe1a6;
+}
+.is-featured {
+  background-color: #4fd496b3;
+  color: #fff;
+}
+.pricing-button.is-featured:hover,
+.pricing-button.is-featured:focus {
+  background-color: #4fd496;
+}
+
+@media (min-width:900px){
+    .panel{
+        flex-direction: row;
+    }
+    .pricing-plan{
+        border: none;
+        border-right: 1px solid #4fd496bd;
+        padding: 25px 50px;
+    }
+    .pricing-plan:last-child{
+        border: none;
+    }
+    
+}
