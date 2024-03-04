@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background:#ddfe23;
+}
+h1{
+    text-align: center;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    flex-basis:50%;
+    justify-content: space-evenly;
+}
+nav ul li a{
+    text-decoration: none;
+}
+@media (max-width:768px){
+    nav , nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+}
