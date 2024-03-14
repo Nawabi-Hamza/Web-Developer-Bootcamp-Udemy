@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bs.min.css" />
+    <script src="bs.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Bootstrap - 1</title>
+  </head>
+  <body class="container-fluid container-md py-5">
+    <div class="container">
+      <div class="row row-cols-4 justify-content-center">
+        <div class="col bg-primary">1</div>
+        <div class="col bg-secondary">2</div>
+        <div class="col bg-danger">3</div>
+        <div class="col bg-success">4</div>
+        <div class="col bg-warning">5</div>
+        <div class="col bg-info">6</div>
+        <div class="col bg-light">7</div>
+        <div class="col bg-dark text-white">8</div>
+      </div>
+    </div>
+
+    <h1 class="fw-bold bg-info">Bootstrap Button</h1>
+    <button class="btn btn-primary">Button Primary</button>
+    <button class="btn btn-danger">Button Danger</button>
+    <button class="btn btn-outline-success">Button Outline Success</button>
+    <button class="btn btn-outline-info">Button Outline Info</button>
+    <button class="btn btn-warning btn-sm">Button SM warning</button>
+    <button class="btn btn-dark">Button Primary</button>
+    <button class="btn btn-secondary btn-lg">Button LG Secondary</button>
+
+    <h1 class="fw-bold bg-info">Bootstrap Typography Heading</h1>
+    <h1 class="h1">Heading 1</h1>
+    <h1 class="h2">Heading 2</h1>
+    <h1 class="h3">Heading 3</h1>
+    <h1 class="h4">Heading 4</h1>
+    <h1 class="h5">Heading 5</h1>
+    <h1 class="h6">Heading 6</h1>
+
+    <h1 class="fw-bold bg-info">Bootstrap Typography Display</h1>
+    <h1 class="display-1">Display 1</h1>
+    <h1 class="display-2">Display 2</h1>
+    <h1 class="display-3">Display 3</h1>
+    <h1 class="display-4">Display 4</h1>
+    <h1 class="display-5">Display 5</h1>
+    <h1 class="display-6">Display 6</h1>
+
+    <h1 class="fw-bold bg-info">Title</h1>
+    <p class="lead">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+      perspiciatis veniam incidunt rerum sequi animi aliquam! Amet, repellendus
+      dolor in, iste dolores natus eaque explicabo non voluptas assumenda
+      necessitatibus reiciendis?
+    </p>
+
+    <h1 class="fw-bold bg-info">Blockquote</h1>
+    <blockquote class="blockquote">
+      <p class="">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In illo
+        repellendus eveniet unde tempora, earum aliquid nesciunt soluta natus,
+        deserunt a libero magnam nemo atque alias.
+        <kbd>This is kbd</kbd> Alias inventore fugiat reprehenderit?
+      </p>
+      <footer class="blockquote-footer">Mr. Lorem Ipsum</footer>
+    </blockquote>
+    <cite>this is cite</cite>
+    <p>
+      <small class="text-body-secondary">this is small</small>
+    </p>
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p>A well-known quote, contained in a blockquote element.</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+      </figcaption>
+    </figure>
+    <ul class="list-unstyled">
+      <li>This is a list.</li>
+      <li>It appears completely unstyled.</li>
+      <li>Structurally, it's still a list.</li>
+      <li>However, this style only applies to immediate child elements.</li>
+      <li>
+        Nested lists:
+        <ul>
+          <li>are unaffected by this style</li>
+          <li>will still show a bullet</li>
+          <li>and have appropriate left margin</li>
+        </ul>
+      </li>
+      <li>This may still come in handy in some situations.</li>
+    </ul>
+
+    <h1 class="fw-bold bg-info">Badges</h1>
+    <p>
+      <span class="badge text-bg-primary">Badge Primary</span>
+      <span class="badge text-bg-secondary">Badge Secondary</span>
+      <span class="badge text-bg-success">Badge Success</span>
+      <span class="badge text-bg-danger">Badge danger</span>
+      <span class="badge text-bg-warning">Badge warning</span>
+      <span class="badge text-bg-info">Badge Info</span>
+      <button type="" class="btn btn-lg btn-primary position-relative">
+        message<span
+          class="badge text-bg-danger position-absolute translate-middle top-0 start-100 rounded-pill"
+          >99+</span
+        >
+      </button>
+    </p>
+
+    <h1 class="fw-bold bg-info">Button Group</h1>
+    <div class="btn-group my-3">
+      <button class="btn btn-primary">left</button>
+      <button class="btn btn-success">main</button>
+      <button class="btn btn-primary">right</button>
+    </div>
+
+    <div class="d-grid gap-3 d-lg-block">
+      <button class="btn btn-primary" type="button">Button</button>
+      <button class="btn btn-primary" type="button">Button</button>
+    </div>
+
+    <div class="d-grid gap-2 my-3 d-lg-flex justify-content-lg-end">
+      <button class="btn btn-primary me-md-2" type="button">Button</button>
+      <button class="btn btn-primary" type="button">Button</button>
+    </div>
+
+    <h1 class="fw-bold bg-info text-center">Alerts</h1>
+    <div class="bg-white p-3">
+      <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+      </div>
+      <div class="alert alert-secondary" role="alert">
+        A simple secondary alert—check it out!
+      </div>
+      <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+      </div>
+      <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+      </div>
+      <div class="alert alert-warning" role="alert">
+        A simple warning alert—check it out!
+      </div>
+      <div class="alert alert-info" role="alert">
+        A simple info alert—check it out!
+      </div>
+      <div class="alert alert-light" role="alert">
+        A simple light alert—check it out!
+      </div>
+      <div class="alert alert-dark" role="alert">
+        A simple dark alert—check it out!
+      </div>
+    </div>
+    <div class=" p-3">
+        <div class="container my-4">
+            <div id="liveAlertPlaceholder"></div>
+            <button type="button" class="btn btn-primary" id="liveAlertBtn">
+              Show live alert
+            </button>
+        </div>
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+            <hr>
+            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+          </div>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h1 class="alert-heading">Holy guacamole!</h1><hr> You should check in on some of those fields below.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> 
+          </div>
+    </div>
+
+    <h1 class="fw-bold bg-info text-center">Grid System</h1>
+    <div class="row row-cols-3">
+      <div class="col bg-danger"></div>
+      <div class="col bg-info"></div>
+      <div class="col bg-success"></div>
+      <div class="col bg-secondary"></div>
+    </div>
+    <br />
+
+    <div class="row">
+      <div class="col-3 bg-danger">a</div>
+      <div class="col-9 bg-info">b</div>
+      <div class="col-6 bg-success">c</div>
+      <div class="col-6 bg-secondary">d</div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 offset-3 bg-warning">form offset 6 columns</div>
+    </div>
+
+    <div class="row">
+      <div class="col bg-danger">Auto Sized</div>
+      <div class="col bg-primary">Auto Sized</div>
+      <div class="col-5 bg-danger">Auto Sized</div>
+    </div>
+
+    <h1 class="fw-bold display-2 bg-info text-center my-2">
+      Responsive Design
+    </h1>
+    <div class="row lead">
+      <div class="col-md-6 col-lg-4 col-xl-3 bg-light">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+        accusantium delectus, nobis magnam velit tempora atque odio maiores
+        ratione pariatur quia dignissimos error dolores? Autem vel veniam
+        accusamus iste maiores.
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3 bg-info">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia nesciunt
+        totam temporibus vitae laborum sed asperiores sapiente, tempora quae
+        sint, alias magni quam voluptas numquam similique sequi
+        <kbd>tenetur</kbd> doloribus! Quisquam!
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3 bg-warning">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+        accusantium delectus, nobis magnam velit tempora atque odio maiores
+        ratione pariatur quia dignissimos error dolores? Autem vel veniam
+        accusamus iste maiores.
+        lorem
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3 bg-dark text-light">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia nesciunt
+        totam temporibus vitae laborum sed asperiores sapiente, tempora quae
+        sint, alias magni quam voluptas numquam similique sequi
+        <kbd>tenetur</kbd> doloribus! Quisquam!
+      </div>
+    </div>
+
+    <div class="row no-gutters">
+      <div class="col-md-6 bg-primary col-xl-4">
+        <img
+          src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+      <div class="col-md-6 bg-light col-xl-4">
+        <img
+          src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+      <div class="col-md-6 bg-danger col-xl-4">
+        <img
+          src="https://fps.cdnpk.net/home/cover/image-7.jpg"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+    </div>
+
+    <div class="row lead">
+        <div class="col-md-6 col-lg-4 col-xl-3 bg-light">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+          accusantium delectus, nobis magnam velit tempora atque odio maiores
+          ratione pariatur quia dignissimos error dolores? Autem vel veniam
+          accusamus iste maiores.
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 bg-info">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia nesciunt
+          totam temporibus vitae laborum sed asperiores sapiente, tempora quae
+          sint, alias magni quam voluptas numquam similique sequi
+          <kbd>tenetur</kbd> doloribus! Quisquam!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minus temporibus quaerat cupiditate? Accusantium veritatis laboriosam ea nam inventore iusto obcaecati, voluptatum quisquam quae! Sed commodi autem corrupti repellat reiciendis!
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 bg-warning">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+          accusantium delectus, nobis magnam velit tempora atque odio maiores
+          ratione pariatur quia dignissimos error dolores? Autem vel veniam
+          accusamus iste maiores.
+          lorem
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3 bg-dark text-light">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia nesciunt
+          totam temporibus vitae laborum sed asperiores sapiente, tempora quae
+          sint, alias magni quam voluptas numquam similique sequi
+          <kbd>tenetur</kbd> doloribus! Quisquam!
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+      const appendAlert = (message, type) => {
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          "</div>",
+        ].join("");
+
+        alertPlaceholder.append(wrapper);
+      };
+
+      const alertTrigger = document.getElementById("liveAlertBtn");
+      if (alertTrigger) {
+        alertTrigger.addEventListener("click", () => {
+          appendAlert("Nice, you triggered this alert message!", "success");
+        });
+      }
+    </script>
+  </body>
+</html>

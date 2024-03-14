@@ -1,0 +1,21 @@
+body {
+  background: rgba(42, 108, 152, 0.706)
+}
+
+.col {
+  height: 5rem;
+}
+
+img{
+    height: 300px !important;
+    object-fit: cover;
+    width: 100%;
+    background-color: black;
+    transition: .5s;
+    filter: brightness(110%);
+}
+img:hover{
+    /* opacity: .7; */
+    filter: brightness(70%);
+    cursor: pointer;
+}
