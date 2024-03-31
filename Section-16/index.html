@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blur-Up Image Loading</title>
+    <style>
+      .image-container {
+        position: relative;
+        width: 100%; /* Adjust as needed */
+        height: auto; /* Adjust as needed */
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        filter: blur(30px); /* Adjust blur amount as needed */
+        transition: filter 0.5s ease-in-out; /* Smooth transition */
+      }
+      .loaded {
+        filter: none; /* Remove blur filter when fully loaded */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img
+        class="blur-up-image"
+        src="https://images.pexels.com/photos/16293663/pexels-photo-16293663/free-photo-of-easter-decor-with-eggs.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+        alt="Placeholder Image"
+      />
+      <img
+        class="blur-up-image"
+        src="https://images.pexels.com/photos/20574181/pexels-photo-20574181.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+        alt="Placeholder Image"
+      />
+      <img
+        class="blur-up-image"
+        src="https://images.pexels.com/photos/4200287/pexels-photo-4200287.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+        alt="Placeholder Image"
+      />
+    </div>
+    <script>
+      const imgs = document.querySelectorAll("img");
+      console.log(window.location);
+      window.addEventListener("load", () => {
+        imgs.forEach((item) => {
+          item.classList.add("loaded");
+          //   console.log(item);
+        });
+      });
+    </script>
+  </body>
+</html>
