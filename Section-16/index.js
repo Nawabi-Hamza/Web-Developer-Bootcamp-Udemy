@@ -19,3 +19,15 @@ if(!null){
     console.log("! not oprator")
 }
 
+const planets = ['The Moon','Venus', 'Earth', 'Mars', 'Jupiter']; //DO NOT TOUCH THIS LINE!
+
+// YOUR CODE GOES BELOW THIS LINE:
+planets.shift() // remove from begining
+planets.unshift("Sun") // add from begining
+planets.push("Saturn") // add at the end
+planets.unshift("Mercury") // add at first 
+
+
+console.log(planets)
+
+
