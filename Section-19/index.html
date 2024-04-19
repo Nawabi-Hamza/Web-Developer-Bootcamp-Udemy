@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gussing Game</title>
+</head>
+<body>
+    <h1>Gussing Game</h1>
+    <script>
+        
+        // ask for maximum number which random number should be between 0 and maximum
+        let maximum = parseInt(prompt("Enter your maximum number :"));
+        while(!maximum){
+            maximum = parseInt(prompt("Enter valid maximum number :"))
+        }
+        // Create random number
+        let randomNumber = Math.floor(Math.random() * maximum) + 1;
+        // console.log(randomNumber)
+        
+        // User guess number
+        let guess = prompt("Enter your first guess or ('q' to quit)");
+        let attempt = 1; // by every attempt we will increase attempt by 1
+
+        // Loop While guess is incorrect 
+        while(parseInt(guess) !== randomNumber){
+            if(guess == 'q') break;
+            if(guess > randomNumber){
+                guess = prompt("Guess High ! Enter lower number");
+                attempt++;
+            }
+            else if(guess < randomNumber){
+                guess = prompt("Guess Low ! Enter Higher number")
+                attempt++;
+            }else{
+                guess = prompt("Invalid Guess ! Enter Valid number ")
+            }
+        }
+        // When guess is correct or user press (q)
+        if(guess == 'q'){
+            console.log("Ok,you  Quit")
+        }else{
+            console.log(`Congratulation ! You guessed ${attempt} time`)
+        }
+    </script>
+</body>
+</html>
