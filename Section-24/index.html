@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: justify;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:2em;
+            /* text-align: center; */
+            background-color: #333333c4;
+        }
+        img{
+            height: 250px;
+            width: 400px;
+            object-fit: cover;
+            margin:2em auto;
+            padding: .5em;
+            background-color: aliceblue;
+            border-radius: 1.5em;
+            border: .01em solid black;
+            transition: 1s;
+        }
+        button{
+            border: .01em solid black;
+            background-color: aliceblue;
+            border-radius: .5em;
+            padding: .5em 2em;
+            transition: .4s;
+        }
+        .btn-group{
+            display: flex;
+            justify-content: space-around;
+        } 
+        button:hover{
+            cursor: pointer;
+            opacity: .5;
+            transform: scale(90%);
+        }
+        .decore{
+            background-color: rgba(255, 132, 0, 0.736);
+            padding: .5em 1em;
+            margin: 1em;
+            border-radius: .4em;
+            list-style-type: none;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM (Document Object Modal)</h1>
+    <p class="right">
+        - Dom is a javascript representation of a webpage <br>
+        - it's your JS "window" into the contents of a webpage <br>
+        - it's just a bunch of objects that you can interact with via JS
+    </p>
+    <div>
+        <img src="" alt="" id="image"><br>
+        <div class="btn-group">
+            <button id="btnPrev" type="">Prev</button>
+            <button id="btn" type="">Next</button>
+        </div>
+    </div>
+    <br><br><br>
+
+
+    <p>
+        <li class="decore">a Loo</li>
+        <li>a Loo</li>
+        <li>a Loo</li>
+        <li>a Loo</li>
+    </p>
+
+
+    <h2> before mark <mark>I Want 100 button in bellow</mark> after mark</h2>
+    <div id="container">
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

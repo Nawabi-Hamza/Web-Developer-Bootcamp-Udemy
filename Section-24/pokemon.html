@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        img{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+        <h1>Pokemon Sprite</h1>
+        <div id="container">
+
+        </div>
+    <script>
+        const container = document.getElementById("container")
+
+        for(let i = 1 ; i<=55 ; i++){
+            // create a div and add image and number in that div
+            const pokemon = document.createElement("pokemon")
+            pokemon.id = "content"
+            container.appendChild(pokemon)
+
+            // create image and append in container
+            const img = document.createElement("img")
+            img.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`
+            pokemon.appendChild(img)
+
+            // create bold tag and append in container under image and show number 
+            const bold = document.createElement('b')
+            bold.innerText = `#${i}`;
+            pokemon.appendChild(bold)
+            console.log(img)
+        }
+    </script>   
+</body>
+</html>
