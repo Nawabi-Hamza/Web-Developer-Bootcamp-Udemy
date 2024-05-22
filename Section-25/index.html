@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOM Events</title>
+    <style>
+        button{
+            height: 50px;
+            cursor: pointer;
+        }
+        .car{
+            background-color: rgb(249, 224, 224);
+            height: 70px;
+            width: 100px;
+            position: absolute;
+            transition: .5s;
+            left:20px;
+            top:20px;
+            cursor: none;
+            pointer-events: painted;
+            outline: none;
+            border-radius: 0 2em 2em 0;
+        }
+        .text-start{
+            text-align:left;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to 25 Section DOM Events</h1>
+    <ul class="text-start">
+      <li>Introducing Events</li>
+      <li>addEventListener</li>
+      <li>Forms Events</li>
+      <li>Keyboard Events</li>
+      <li>Input & Change Events</li>
+      <li>Event Delegation</li>
+    </ul>
+    <div>
+      <h3>DOM Events</h3>
+      <p>
+        Events are the key for createing interactive website <br />
+        click , drags , drops , hover , scrolls , form submission , key presses
+        , focus/blur , mouse wheel , double click , copying , pasting , audio
+        start , screen resize , printing ,
+      </p>
+    </div>
+    <div>
+      <button onclick="alert('you clicked me'); alert('stop clicking')">
+        Click Me !
+      </button>
+      <br />
+      <button onclick="message()">Click Me too!</button>
+      <button ondblclick="message()">Click Me double!</button>
+      <br />
+      <button id="v2">Click me (2nd version)</button>
+      <br />
+      <button id="v3">Click me (3nd version)</button>
+      <br />
+      <button id="tas">Twist && Shout</button>
+    </div>
+    <div>
+      <h1>Change Color Random <mark id="rgb"></mark></h1>
+      <button id="btn-color">Change Color</button>
+    </div>
+
+    <div>
+        <h1>Keyword this</h1>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <button>Click Me</button>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+        <h1>click me !</h1>
+    </div>
+    <input type="text">
+    <div>
+        <button class="b1">Click</button>
+    </div>
+    <input class="car">
+
+    <div>
+        <h1>Form Events</h1>
+        <form action="/shelter" id="shelter">
+            <input type="text" id="text">
+            <button type="submit">Submit</button>
+        </form>
+        <ul class="list">
+        </ul>
+    </div>
+
+    <div class="text-start">
+        <h1>Form Events Tweete</h1>
+        <form action="/dogs" id="tweet">
+            <input type="text" id="username" placeholder="Your username">
+            <input type="text" id="twt" placeholder="Your tweet">
+            <button type="submit">Submit</button>
+        </form>
+        <h1>Tweets: </h1>
+        <ul class="tweets">
+            <li>Sdf</li>
+            <li>Sdffdasdf</li>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione voluptatibus possimus qui assumenda ducimus eius reiciendis ut provident soluta aliquid totam culpa, est dolores repellendus placeat, sint atque aut? Necessitatibus.
+            </p>
+        </ul>
+    </div>
+
+    <input type="text" id="input-event">
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <script src="./script.js"></script>
+  </body>
+</html>
