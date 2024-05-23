@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+}
+.score{
+    padding: 2em;
+    text-align: center;
+}
+.score select,
+.score button{
+    padding: .5em 1em;
+    margin-top: 2em;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 1em;
+    transition: .5s;
+}
+.score button:nth-of-type(1){
+    background-color: #ff0000;
+}
+.score button:nth-of-type(2){
+    background-color: #55ff00;
+}
+.score button:nth-of-type(3){
+    background-color: #00ffff;
+}
+.score select{
+    background-color: #f6ff00;
+}
+.score button:hover{
+    opacity: .8;
+}
+
+.winner{
+    color: #55ff00;
+}
+.loser{
+    color: #ff0000;
+}
