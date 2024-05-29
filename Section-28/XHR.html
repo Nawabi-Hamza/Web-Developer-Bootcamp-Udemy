@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000000;
+            color: #ffffff99;
+            padding: 5em 6em;
+        }
+        h1,h2{
+            color: rgb(42, 165, 122);
+            margin-bottom: 1em;
+            font-size: 2em;
+        }
+    </style>
+    <title>XHR | XML Http Request</title>
+</head>
+<body>
+    
+    <script>
+        const url = "https://swapi.dev/api/people/1"
+        const req = new XMLHttpRequest()
+        console.log(req)
+        // set request method and path
+        req.open("GET",url)
+        // When loaded the request successfuly
+        req.onload = function(){
+            console.log("LOADED SUCCESSFULLY ...")
+            console.log(this.responseText)
+            const data = JSON.parse(this.responseText)
+            console.log(data.name,data.height)
+        }
+        // When something went wrong 
+        req.onerror = function(){
+            console.log("SOMETHING WENT WRONG !!!")
+            console.log(this)
+        }
+        // send our request 
+        req.send()
+    </script>
+</body>
+</html>

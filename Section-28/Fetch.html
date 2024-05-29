@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch | API</title>
+</head>
+<body>
+    
+
+    <script>
+        // fetch("https://swapi.dev/api/people/1")  // return a promise
+        // .then( res => res.json() )
+        // .then((data)=>{
+        //     console.log("First DATA")
+        //     console.log(data)
+        //     return fetch("https://swapi.dev/api/people/2")  // return a promise
+        // })
+        // .then( res => res.json() )
+        // .then( data=>{
+        //     console.log("SECOND DATA")
+        //     console.log(data)
+        // })
+        // .catch( error=> console.log("ERROR :"+error) )
+
+        const showStarMovie = async()=>{
+            try{
+                // At first it goes and load this section 
+                const res = await fetch("https://swapi.dev/api/people/1cxvxcv")
+                const data = await res.json()
+                console.log("First DATA")
+                console.log(data)
+                // after execution first section this section will run
+                const res2 = await fetch("https://swapi.dev/api/people/2")
+                const data2 = await res2.json()
+                console.log("Second DATA")
+                console.log(data2)
+            }
+            catch(error){
+                console.log("ERROR :"+error)
+            }
+        }
+        showStarMovie()
+    </script>
+</body>
+</html>

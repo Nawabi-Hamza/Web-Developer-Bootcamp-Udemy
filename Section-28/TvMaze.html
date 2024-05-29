@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Axios | api</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000000;
+            color: #ffffff99;
+            padding: 5em 6em;
+        }
+        h1,h2{
+            color: rgb(42, 165, 122);
+            margin-bottom: 1em;
+            font-size: 2em;
+        }
+        div{
+            margin-bottom: 2em;
+            background: #2d2d2dbe;
+            padding: 2em;
+            border-radius: 1em;
+        }
+        button{
+            padding: .5em 1em;
+            cursor: pointer;
+            margin-bottom: 2em;
+            color: rgb(42, 165, 122);
+        }
+        li{
+            margin-bottom: 1em;
+        }
+        input{
+            width: 80%;
+            padding:.5em;
+            border-style: solid;
+            border-radius: 5px;
+            height: 34px;
+            color:rgb(42, 165, 122) ;
+        }
+        input:focus{
+            outline:1px solid rgb(42, 165, 122);
+        }
+        form{
+            justify-content: center;
+            display: flex;
+            gap: 1em;
+        }
+        img{
+            width: 25%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 2em;
+        }
+        @media  screen and (max-width:900px) {
+            img{
+                width: 50%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>TV Show Search</h1>
+    <div id="content">
+        <form action="" id="searchForm">
+            <input type="text" placeholder="Tv Show title" name="query">
+            <button>Search</button>
+        </form>
+    </div>
+
+    <div class="content" id="showSearch">
+
+    </div>
+    <script>
+        const form = document.querySelector("#searchForm")
+        const resultShow = document.querySelector("#showSearch")
+        const input = document.querySelector("#searchForm input")
+        const getMovie = async(query)=>{
+            try{
+                const config = {
+                    headers:{ Accept:"Application/json" },
+                    params: { q:query,isFunny:'colt' }
+                }
+                const res = await axios.get(`https://api.tvmaze.com/search/shows`,config)
+                return res.data;
+            }catch(error){
+                return "SOMETHING WENT WRONG :"+error
+            }
+        }
+
+        input.addEventListener('keypress',(e)=>{
+            // console.log(form.elements.query.value)
+            try{
+                setTimeout(async()=>{
+                    // console.log(e.target.value)
+                    const query = await e.target.value
+                    const res = await getMovie(query)
+                    makeImgs(res,resultShow)
+                },3000)
+            }catch(err){
+                console.log(err)
+            }
+        })
+
+        form.addEventListener("submit",async(e)=>{
+            e.preventDefault()  
+            const query = form.elements.query.value
+            const res = await getMovie(query)
+            for(let result of res){
+                console.log(result.show.name)
+            }
+
+            makeImgs(res,resultShow) 
+        })
+
+        const makeImgs = (shows,display)=>{
+            display.innerHTML = ""
+            for(let result of shows){
+                // console.log(result)
+                const imgSrc = result.show.image
+                const img = document.createElement("img")
+                if(imgSrc){
+                    img.src=imgSrc.medium
+                    display.appendChild(img)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios | api</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000000;
+            color: #ffffff99;
+            padding: 5em 6em;
+        }
+        h1,h2{
+            color: rgb(42, 165, 122);
+            margin-bottom: 1em;
+            font-size: 2em;
+        }
+        div{
+            margin-bottom: 2em;
+            background: #2d2d2dbe;
+            padding: 2em;
+            border-radius: 1em;
+        }
+        button{
+            padding: .5em 1em;
+            cursor: pointer;
+            margin-bottom: 2em;
+        }
+        li{
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Axios HTTP Request</h1>
+    <div id="content">
+        GET NEW JOKES <br><br>
+        <button id="new-joke">NEW JOKE</button>
+        <div class="li-jokes"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        const btnClick = document.querySelector("#new-joke")
+        const content = document.querySelector(".li-jokes")
+        
+        const getJoke = async()=>{
+            try{
+                const config = {headers:{Accept:"Application/json"}}
+                const res = await axios.get("https://icanhazdadjoke.com",config)
+                return res.data.joke
+            }catch(error){
+                return "NO JOKE AVAILABLE ! SORRY :("
+            }
+        }
+
+        const newJoke = async()=>{
+            const res = await getJoke()
+            const li = document.createElement("li")
+            li.innerText = res
+            content.append(li)
+        }
+
+        window.onload = ()=>{
+            newJoke()
+        }
+
+        btnClick.addEventListener("click",newJoke)
+
+
+        // const content = document.querySelector("#content")
+        // const showStarWar = async(id)=>{
+        //     const res =await axios.get(`https://swapi.dev/api/people/${id}`)
+        //     const data =await res.data
+        //     console.log(data)
+        //     content.innerText = JSON.stringify(data,null,4)
+        //     const res1 =await axios.get(`https://swapi.dev/api/people/${++id}`)
+        //     const data1 = await res1.data
+        //     console.log(data1)
+        //     content.innerText=JSON.stringify(data1,null,4)
+        // }
+        // showStarWar(12)
+    </script>
+</body>
+</html>

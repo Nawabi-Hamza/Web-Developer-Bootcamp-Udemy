@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax | APIs</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000000;
+            color: #ffffff99;
+            padding: 5em 6em;
+        }
+        h1,h2{
+            color: rgb(42, 165, 122);
+            margin-bottom: 1em;
+            font-size: 2em;
+        }
+        h2{
+            font-size: 1.7em;
+        }
+        div{
+            margin-bottom: 2em;
+            background: #2d2d2dbe;
+            padding: 2em;
+            border-radius: 1em;
+        }
+        ul{
+            list-style: none;
+        }
+        p{
+            text-align: justify;
+            font-size: 1.2em;
+        }
+        li::selection,
+        h2::selection,
+        p::selection,
+        h1::selection{
+            background-color: rgb(42, 165, 122);
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>What we will learn ?</h1>
+        <ul>
+            <li>- Working with APIs</li>
+            <li>- Intro JSON</li>
+            <li>- Postman</li>
+            <li>- Making XHRs(XML HTTP REQUEST)</li>
+            <li>- Fetch API</li>
+            <li>- Working with Axios</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Ajax (Asynchronouse Javascript And XML)</h2>
+        <p>
+            Ajax is a technique for creating fast, dynamic web pages. Ajax is not a new technology, or another protocol. It uses a number of technologies
+            to return dynamic data. The intent of Ajax is to make web pages feel more responsive by exchanging small amounts of data with the server
+            behind the scenes, so that the entire web page does not have to be reloaded each time the user makes a change. This is meant to
+            increase a web page's interactivity, speed, and usability.
+        </p>
+    </div>
+    <div>
+        <h2>API (Application Programming Interface)</h2>
+        <p>
+            API is a set of routines, protocols, and tools for building software applications. Basically, it's a software intermediary that allows
+            two applications to talk to each other. Each time you use an app like Facebook, send an instant message, or check the weather on your phone
+            , you're using an API.
+        </p>
+    </div>
+    <div>
+        <h2>JSON (Java Script Object Notation)</h2>
+        <p>
+            JSON is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+            It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is
+            a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages,
+            including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language
+        </p>
+    </div>
+    <div>
+        <h2>HTTP Verbs</h2>
+        <p>
+            HTTP Verbs are used to make requests to the server. There are 7 HTTP Verbs. They are GET, POST, PUT, DELETE
+            , PATCH, OPTIONS, and HEAD. The most common HTTP Verbs are GET and POST. 
+            GET is used to retrieve data from the server.
+            POST is used to send data to the server. The other HTTP Verbs are used less frequently.
+        </p>
+    </div>
+    <div>
+        <h2>HTTP Status Code</h2>
+        <p>
+            HTTP Status Code is used to indicate the status of the request. There are 5 categories of HTTP Status Code. They are Informational
+            , Successful, Redirection, Client Error, and Server Error. The most common HTTP Status Code is 200. 
+            200 means the request was
+            successful. The other HTTP Status Code are used less frequently.
+        </p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
