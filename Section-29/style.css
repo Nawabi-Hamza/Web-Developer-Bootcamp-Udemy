@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000000;
+    color: #ffffff99;
+    padding: 5em 6em;
+}
+h1,h2{
+    color: rgb(42, 165, 122);
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+div{
+    margin-bottom: 2em;
+    background: #2d2d2dbe;
+    padding: 2em;
+    border-radius: 1em;
+}
+button{
+    padding: .5em 1em;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+li{
+    margin-bottom: 1em;
+}
