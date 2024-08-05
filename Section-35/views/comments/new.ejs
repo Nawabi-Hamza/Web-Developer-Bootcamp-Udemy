@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW Comment</title>
+</head>
+<body>
+    <h1>Make a new comment</h1>
+    <form action="/comments" method="POST">
+        <section>
+            <label for="username">Enter username:</label>
+            <input type="text" id="username" name="username" placeholder="username"><br>
+        </section>
+        <section>
+            <label for="comment">Enter Comment:</label><br>
+            <textarea name="comment" id="comment" col="30" role="5" placeholder="your comment"></textarea>
+        </section>
+        <button type="submit">submit</button>
+    </form>
+    <a href="/comments">Back to index</a>
+</body>
+</html>
