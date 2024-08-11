@@ -23,11 +23,21 @@ personSchema.virtual('fullName').get(function(){
     return `${this.first} ${this.last}`
 })
 
-const Person = mongoose.model('Person',personSchema)
+personSchema.pre('save',async function(){
+    this.first = 'Hamza'
+    this.last = 'Nawabi'
+    console.log("ABOUT SAVE")
+})
+personSchema.post('save',async function(){
+    console.log("Just SAVE")
+})
 
+
+const Person = mongoose.model('Person',personSchema)
 const tammy = new Person({first:'tammy',last:'chow'})
 
-// tammy.save()
+tammy.save()
 
 Person.find()
 .then(data=>console.log(data))
+
