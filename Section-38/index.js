@@ -20,6 +20,8 @@ app.set('view engine','ejs')
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride("_method"))
 
+
+
 const categories = ['fruit','vegetable','dairy']
 
 app.get('/products',async(req,res)=>{
@@ -53,8 +55,13 @@ app.get('/products/new',(req,res)=>{
 })
 
 app.get('/products/:id',async(req,res)=>{
-    const product = await Product.findById(req.params.id)
-    res.render('products/singleProduct',{ product })
+     await Product.findById(req.params.id)
+     .then((data)=>{
+         res.render('products/singleProduct',{ product:data })
+     })
+    .catch(err=>{
+        res.redirect("/products")
+    })
 })
 
 app.put("/products/:id",async(req,res)=>{
@@ -70,7 +77,13 @@ app.delete("/products/:id",async(req,res)=>{
     res.redirect(`/products`)
 })
 
-
+// when user come with any url it redirect him to products page
+app.get('/*',(req,res)=>{
+    res.redirect('/products')
+})
+app.get('/products/*',(req,res)=>{
+    res.redirect('/products')
+})
 // filtering by category
 // app.get('/products/:category',async(req,res)=>{
 //     const { category } = req.params
