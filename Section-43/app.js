@@ -5,6 +5,7 @@ const Campground = require("./models/campground")
 const methodOverride = require('method-override')
 const ejsMate = require('ejs-mate')
 const AppError = require('./AppError')
+const validateCampground = require("./Schema")
 const app = express()
 
 app.engine('ejs',ejsMate)
@@ -23,6 +24,8 @@ db.once("open",()=>{
 
 //check id is valid in mongoDB algorithem
 const isValidId = (id)=> mongoose.Types.ObjectId.isValid(id)
+
+
 
 app.get("/",(req,res)=>{
     res.render('home')
@@ -63,13 +66,22 @@ app.get('/campgrounds/:id/edit',wrapAsync(async(req,res,next)=>{
 }))
 
 
-app.post('/campgrounds',wrapAsync(async(req,res)=>{
-        const campground = new Campground(req.body.campground)
-        await campground.save()
-        res.redirect(`/campgrounds/${campground.id}`)
+// app.post('/campgrounds',wrapAsync(async(req,res)=>{
+//         const campground = new Campground(req.body.campground)
+//         await campground.save()
+//         res.redirect(`/campgrounds/${campground.id}`)
+// }))
+
+
+
+app.post('/campgrounds',validateCampground, wrapAsync(async(req,res)=>{
+    
+    const campground = new Campground(req.body.campground)
+    await campground.save()
+    res.redirect(`/campgrounds/${campground.id}`)
 }))
 
-app.put("/campgrounds/:id",wrapAsync(async(req,res,next)=>{
+app.put("/campgrounds/:id",validateCampground,wrapAsync(async(req,res,next)=>{
     
         const { id } = req.params
         await Campground.findByIdAndUpdate(id,{...req.body.campground},{new:true,runValidators:true})
