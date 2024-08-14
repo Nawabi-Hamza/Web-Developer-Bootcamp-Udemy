@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 const Campground = require("./models/campground")
 const methodOverride = require('method-override')
 const ejsMate = require('ejs-mate')
+const AppError = require('./AppError')
 const app = express()
 
 app.engine('ejs',ejsMate)
@@ -20,6 +21,8 @@ db.once("open",()=>{
     console.log("connected to db")
 })
 
+//check id is valid in mongoDB algorithem
+const isValidId = (id)=> mongoose.Types.ObjectId.isValid(id)
 
 app.get("/",(req,res)=>{
     res.render('home')
@@ -29,41 +32,69 @@ app.get('/campgrounds',async(req,res)=>{
     res.render('campgrounds/index',{campgrounds})
 })
 app.get('/campgrounds/new',(req,res)=>{
+    // throw new AppError("Not Allowed",404)
     res.render('campgrounds/new')
 })
-app.get('/campgrounds/:id',async(req,res)=>{
-    const { id } = req.params
-    const campground = await Campground.findById(id)
-    res.render('campgrounds/show',{campground})
+
+function wrapAsync(fn){
+    return function(req,res,next){
+        fn(req,res,next).catch(e => next(e))
+    }
+}
+
+app.get('/campgrounds/:id',wrapAsync(async(req,res,next)=>{
+        const { id } = req.params
+        if(!isValidId(id)) throw new AppError("Not Valid ID !",401)
+
+        const campground = await Campground.findById(id)
+        if(!campground) throw new AppError("This record not found !",404)
+        
+        res.render('campgrounds/show',{campground})
+}))
+app.get('/campgrounds/:id/edit',wrapAsync(async(req,res,next)=>{
+  
+        const { id } = req.params
+        if(!isValidId(id)) throw new AppError("Not Valid ID to update !",401)
+        
+        const campground = await Campground.findById(id)
+        if(!campground) throw new AppError("Not Found Record for update!",404)
+        
+        res.render('campgrounds/edit',{campground})
+}))
+
+
+app.post('/campgrounds',wrapAsync(async(req,res)=>{
+        const campground = new Campground(req.body.campground)
+        await campground.save()
+        res.redirect(`/campgrounds/${campground.id}`)
+}))
+
+app.put("/campgrounds/:id",wrapAsync(async(req,res,next)=>{
+    
+        const { id } = req.params
+        await Campground.findByIdAndUpdate(id,{...req.body.campground},{new:true,runValidators:true})
+        res.redirect(`/campgrounds/${id}`)
+    
+}))
+app.delete("/campgrounds/:id",wrapAsync(async(req,res)=>{
+    
+        const { id } = req.params
+        await Campground.findByIdAndDelete(id)
+        res.redirect(`/campgrounds`)
+
+}))
+
+
+app.use((err,req,res,next)=>{
+    console.log(err.name)
+    next(err)
 })
-app.get('/campgrounds/:id/edit',async(req,res)=>{
-    const { id } = req.params
-    const campground = await Campground.findById(id)
-    res.render('campgrounds/edit',{campground})
+
+
+app.use((err,req,res,next)=>{
+    const { status=500,message='Something went wrong' } = err
+    res.status(status).send({ status,message })
 })
-
-
-app.post('/campgrounds',async(req,res)=>{
-    const campground = new Campground(req.body.campground)
-    await campground.save()
-    res.redirect(`/campgrounds/${campground.id}`)
-})
-
-app.put("/campgrounds/:id",async(req,res)=>{
-    const { id } = req.params
-    await Campground.findByIdAndUpdate(id,{...req.body.campground},{new:true})
-    res.redirect(`/campgrounds/${id}`)
-})
-app.delete("/campgrounds/:id",async(req,res)=>{
-    const { id } = req.params
-    await Campground.findByIdAndDelete(id)
-    res.redirect(`/campgrounds`)
-})
-
-
-
-
-
 
 
 
