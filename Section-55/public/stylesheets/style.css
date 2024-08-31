@@ -1,0 +1,22 @@
+
+.card-view{
+    transition:all .5s;
+    overflow: hidden;
+}
+.card-view:hover{
+    background-color: skyblue;
+    cursor: pointer;
+    outline: 3px solid skyblue;
+    outline-offset: 5px;
+}
+
+.card-view:hover .btn{
+    border-color:white ;
+    color:white;
+}
+.img-fluid{
+    transition: .5s;
+}
+.card-view:hover .img-fluid{
+    transform: scale(110%);
+}
