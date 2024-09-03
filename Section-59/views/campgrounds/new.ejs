@@ -1,0 +1,85 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container d-flex justify-content-center align-items-center mb-5">
+    <div class="row w-100">
+        <div class="col-12 col-md-8 offset-md-2 col-xl-6 offset-xl-3">
+            <div class="card ">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">New Campground</h1>
+                    <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label class="form-label" for="title">Title</label>
+                            <input required type="text" class="form-control" id="title" name="campground[title]">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please fill out this field.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="location">Location</label>
+                            <input required type="text" class="form-control" id="location" name="campground[location]">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please fill out this field.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-file custom-file">
+                            <label class="form-label" for="image">Choose Image:</label>
+                            <input required type="file" class="form-file-input form-control" id="image" name="image" multiple >
+                           
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="price">Campground Price</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">$</span>
+                                <input required type="text" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="basic-addon1" name="campground[price]">
+                            </div>
+                        </div>              
+                        <div class="mb-3">
+                            <label class="form-label" for="description">Description</label>
+                            <textarea required type="text" class="form-control" id="description" name="campground[description]"></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-info">Add Campground</button>
+                            <a href="/campgrounds" class="btn btn-outline-info">Cancel</a>
+                        </div>
+                    </form>
+                    <a href="/campgrounds">Back to campgrounds</a>
+                    </form>
+                </div>
+            </div> <!-- End Card Shadow -->
+        </div>
+    </div> <!-- End row -->
+</div>
+
+
+<script>
+    (() => {
+        'use strict'
+      
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.validated-form')
+      
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+      
+            form.classList.add('was-validated')
+          }, false)
+        })
+      })()
+</script>
