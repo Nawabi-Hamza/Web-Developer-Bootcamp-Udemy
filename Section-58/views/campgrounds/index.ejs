@@ -1,0 +1,51 @@
+
+
+
+<% layout('layouts/boilerplate') %>
+
+<div id="cluster-map" >
+
+
+</div>
+<h1>All Campgorunds</h1>
+<a href="/campgrounds/new" class="btn btn-info">Add Campground</a>
+<br><br>
+    <div class="row">
+        <% let num = 10 %>
+        
+      
+        <% for(let camp of campgrounds){ %>
+        <div class="col-xl-6">
+            <div class="card card-view mb-3">
+                <div class="row">
+                    <div class="col-md-6 col-lg-5">
+                        <% if(camp.images.length){ %>
+                        <img src="<%= camp.images[0].url %>" class="img-fluid h-100 w-100 " style="object-fit: cover;"  alt="">
+                        <% }else{ %>
+                            <img src="https://res.cloudinary.com/dskt3xxtq/image/upload/v1724824946/YelpCamp/tbj9c0ktv3l5joobysjo.jpg" class="img-fluid h-100">
+                        <% } %>
+                    </div>
+                    <div class="col-md-6 col-lg-7">
+                        <div class="card-body">
+                            <h4 class="card-title"><%= camp.title %></h4>
+                            <p class="card-text"><%= camp.description %></p>
+                            <p class="text-text">
+                                <span class="text-muted"><%= camp.location %></span>
+                            </p>
+                            <a href="/campgrounds/<%= camp.id %>" class="btn btn-outline-info">View <%= camp.title %> &gt;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+    </div>
+
+
+<script>
+    const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>' ;
+    const camp = { features: <%- JSON.stringify(campgrounds) %>};
+    // console.log(camp)
+</script>
+<script src="/javascripts/clusterMap.js"></script>

@@ -1,0 +1,43 @@
+
+
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-5">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start bg-dark" id="offcanvasDarkNavbar">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-white" id="offcanvasDarkNavbarLabel">YelpCamp</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>            
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end justify-content-md-start flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/campgrounds">Campgrounds</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/campgrounds/new">New Campground</a>
+                    </li>
+                    <ul class="navbar-nav ms-md-auto">
+                        <% if(!currentUser){ %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register">Register</a>
+                            </li>
+                        <% }else{ %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
