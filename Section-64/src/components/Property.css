@@ -1,0 +1,12 @@
+.property-list {
+  display: flex;
+  gap:1em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.Property {
+  width: 300px;
+  border: 1px solid grey;
+}
