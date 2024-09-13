@@ -9,7 +9,7 @@ import EmojiClicker from './components/EmojiClicker'
 import ScoreKeep from './components/ScoreKeep'
 
 function App() {
-
+ 
   return (
     <>
       {/* <Counter /> */}
@@ -20,8 +20,7 @@ function App() {
 
       {/* <EmojiClicker /> */}
 
-      <ScoreKeep numPlayers={10} target={10} />
-
+      <ScoreKeep numPlayers={5} target={10} />
     </>
   )
 }
