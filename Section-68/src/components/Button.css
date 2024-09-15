@@ -1,0 +1,15 @@
+.Button{
+    background-color: slateblue;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    border: none;
+    color: white;
+    transition: .25s;
+    margin: 2px;
+}
+.Button:hover{
+    opacity:0.7;
+}
+.Button:disabled{
+    opacity: .5;
+}
