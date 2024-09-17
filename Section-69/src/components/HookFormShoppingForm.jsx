@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 
 
 function HookFormShoppingListForm({ addItem }) {
-    const [ formData,setFormData ] = useState({ product:"",quantity:0 })
+    
     // const { register, handleSubmit, formState:{errors} } = useForm({ mode:"onChange" })
     const { register, handleSubmit, formState:{errors} } = useForm()
     
@@ -34,6 +34,7 @@ function HookFormShoppingListForm({ addItem }) {
 
   return (
     <form onSubmit={handleSubmit(handleRegistration,handleError)}>
+
         <label>Name: 
             <input type="text" placeholder='name' {...register("name" , registerOptions.name)} />
             <p style={{color:"orangered"}}>{errors?.name && errors.name.message}</p>
@@ -52,7 +53,6 @@ function HookFormShoppingListForm({ addItem }) {
         </label>
         
         <button type="submit">Add to List</button>
-
         {/* <h3>Product is : { formData.product } and quantity is: {formData.quantity} </h3> */}
     </form>
   )
